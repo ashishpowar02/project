@@ -1,63 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/black"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:padding="16dp">
-    <TextView
-        android:id="@+id/numberTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
-        android:text="0"
-         />
-       <LinearLayout
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:layout_below="@id/numberTextView"
-           android:layout_centerHorizontal="true"
-           android:orientation="horizontal"
-           android:layout_marginTop="16dp">
 
 
-       <androidx.appcompat.widget.AppCompatButton
-           android:layout_width="wrap_content"
-           android:layout_height="wrap_content"
-           android:id="@+id/incrementButton"
-           android:text="Increment"
-           android:background="@drawable/button_background"
-           android:layout_marginRight="8dp"/>
-
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/decrementButton"
-        android:text="Decremnt"
-        android:background="@drawable/button_background"/>
-
-
-       </LinearLayout>
-
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/lottieAmimationView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/numberTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="16dp"
+            android:text="0"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/numberTextView"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:orientation="horizontal">
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/incrementButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/button_background"
+                android:text="Increment" />
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/decrementButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background"
+                android:text="Decremnt" />
+
+
+        </LinearLayout>
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottieAmimationView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/number" />
+
+
+
+    </RelativeLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/settingsButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+
+        android:src="@drawable/settings"
+        app:fabSize="mini" />
+
+    <LinearLayout
+        android:id="@+id/bannnerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
-        android:layout_gravity="center"
-        app:lottie_rawRes="@raw/number" />
-
-
-
-
-</RelativeLayout>
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
